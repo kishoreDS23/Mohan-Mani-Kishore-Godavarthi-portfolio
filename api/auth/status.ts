@@ -5,7 +5,7 @@ export default function handler(req: any, res: any) {
   return res.status(200).json({
     success: true,
     isConfigured: ownerSecurity.isConfigured,
-    ownerName: "Mani Kishore Godavarthi",
+    ownerName: "Mohan Mani Kishore Godavarthi",
     ownerEmail: OWNER_EMAIL,
     question1: ownerSecurity.question1,
     question2: ownerSecurity.question2,

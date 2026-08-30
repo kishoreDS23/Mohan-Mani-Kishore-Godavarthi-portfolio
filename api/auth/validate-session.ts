@@ -15,7 +15,7 @@ export default function handler(req: any, res: any) {
     return res.status(200).json({
       success: true,
       valid: true,
-      owner: "Mani Kishore Godavarthi",
+      owner: "Mohan Mani Kishore Godavarthi",
       email: OWNER_EMAIL,
     });
   }

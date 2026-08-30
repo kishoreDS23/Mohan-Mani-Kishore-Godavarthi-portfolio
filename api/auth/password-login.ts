@@ -38,7 +38,7 @@ export default function handler(req: any, res: any) {
     const ans1Hash = hashSec(answer1, ownerSecurity.salt);
     const ans2Hash = hashSec(answer2, ownerSecurity.salt);
     const match1 = (ans1Hash === ownerSecurity.answer1Hash) || (answer1.trim().toLowerCase() === "ml");
-    const match2 = (ans2Hash === ownerSecurity.answer2Hash) || (answer2.trim().toLowerCase() === "R");
+    const match2 = (ans2Hash === ownerSecurity.answer2Hash) || (answer2.trim().toLowerCase() === "r");
 
     if (!match1 || !match2) {
       return res.status(401).json({ 
@@ -54,7 +54,7 @@ export default function handler(req: any, res: any) {
       success: true,
       message: "Owner authenticated successfully! Access granted.",
       token,
-      owner: "Mani Kishore Godavarthi",
+      owner: "Mohan Mani Kishore Godavarthi",
       email: OWNER_EMAIL,
       authorizedAt: new Date().toISOString(),
     });

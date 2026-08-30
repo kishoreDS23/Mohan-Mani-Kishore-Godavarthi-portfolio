@@ -19,7 +19,7 @@ export default function handler(req: any, res: any) {
 
     if (ownerSecurity.isConfigured && currentPassword) {
       const curHash = hashSec(currentPassword, ownerSecurity.salt);
-      if (curHash !== ownerSecurity.passwordHash && currentPassword !== "Kishore@2026") {
+      if (curHash !== ownerSecurity.passwordHash && currentPassword !== "kishore@2007") {
         return res.status(401).json({ success: false, error: "Current password verification failed." });
       }
     }
@@ -49,7 +49,7 @@ export default function handler(req: any, res: any) {
       success: true,
       message: "Master Password and Security Questions successfully updated!",
       token,
-      owner: "Mani Kishore Godavarthi",
+      owner: "Mohan Mani Kishore Godavarthi",
       email: OWNER_EMAIL,
     });
   } catch (err: any) {

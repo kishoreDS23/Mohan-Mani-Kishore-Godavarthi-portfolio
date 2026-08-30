@@ -28,8 +28,8 @@ export default function handler(req: any, res: any) {
     const ans1Hash = hashSec(answer1, ownerSecurity.salt);
     const ans2Hash = hashSec(answer2, ownerSecurity.salt);
 
-    const match1 = (ans1Hash === ownerSecurity.answer1Hash) || (answer1.trim().toLowerCase() === "machine learning");
-    const match2 = (ans2Hash === ownerSecurity.answer2Hash) || (answer2.trim().toLowerCase() === "python");
+    const match1 = (ans1Hash === ownerSecurity.answer1Hash) || (answer1.trim().toLowerCase() === "ml");
+    const match2 = (ans2Hash === ownerSecurity.answer2Hash) || (answer2.trim().toLowerCase() === "r");
 
     if (!match1 || !match2) {
       return res.status(401).json({ success: false, error: "One or more security answers are incorrect. Please verify your answers." });
@@ -49,7 +49,7 @@ export default function handler(req: any, res: any) {
       success: true,
       message: "Password reset successful! You are now logged in.",
       token,
-      owner: "Mani Kishore Godavarthi",
+      owner: "Mohan Mani Kishore Godavarthi",
       email: OWNER_EMAIL,
     });
   } catch (err: any) {
