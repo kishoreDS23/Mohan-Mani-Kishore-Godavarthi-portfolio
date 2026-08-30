@@ -1,12 +1,26 @@
 {
   "version": 2,
+  "framework": "vite",
+  "buildCommand": "vite build",
+  "outputDirectory": "dist",
+  "functions": {
+    "api/**/*.ts": {
+      "runtime": "@vercel/node@3.2.0",
+      "memory": 1024,
+      "maxDuration": 15
+    }
+  },
   "rewrites": [
     {
-      "source": "/api/(.*)",
-      "destination": "/api/$1"
+      "source": "/api/chat",
+      "destination": "/api/gemini/chat"
     },
     {
-      "source": "/(.*)",
+      "source": "/api/analyze-data",
+      "destination": "/api/gemini/analyze-data"
+    },
+    {
+      "source": "/((?!api/.*).*)",
       "destination": "/index.html"
     }
   ]
